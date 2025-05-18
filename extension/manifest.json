@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Spam Detector",
+  "version": "1.0",
+  "description": "Phát hiện bình luận spam trên LinkedIn",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": [
+    "http://localhost:8080/*",
+    "https://www.linkedin.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://www.linkedin.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "48": "icon.webp"
+  }
+}
